@@ -1,16 +1,6 @@
 .App {
+  background-color: #292929;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -22,17 +12,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  max-width: 728px;
+  margin: 0 auto;
+  border: solid 2px #1bc51b;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sign-with-google {
+  color: #282c34;
+  background: white;
+  padding: 15px 20px;
+  border: none;
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
 }
