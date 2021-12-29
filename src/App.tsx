@@ -1,14 +1,9 @@
 import React from "react";
 import "./App.css";
+import Login from "./components/Login/Login";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <button className="sign-with-google">Sign in with Google</button>
-      </header>
-    </div>
-  );
+  return <Login />;
 }
 
 export default App;
