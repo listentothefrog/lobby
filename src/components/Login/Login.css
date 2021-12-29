@@ -1,0 +1,29 @@
+.App {
+  background-color: #292929;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  max-width: 728px;
+  margin: 0 auto;
+  border: solid 2px #1bc51b;
+}
+
+.sign-with-google {
+  color: #282c34;
+  background: white;
+  padding: 15px 20px;
+  border: none;
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
