@@ -1,8 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Login from "./components/Login/Login";
 
 function App() {
-  return <Login />;
+  return (
+    <Suspense fallback="Loading...">
+      <Login />
+    </Suspense>
+  );
 }
 
 export default App;
