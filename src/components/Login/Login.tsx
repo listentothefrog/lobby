@@ -18,30 +18,25 @@ const Login = () => {
       });
   };
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="welcome-div">
-          <h1 className="welcome-heading">Welcome to Lobby!</h1>
-          <p className="welcome-subtitle">
-            The Foundation for{" "}
-            <a
-              className="astrowrld-link"
-              target="_blank"
-              rel="noopener"
-              href="https://github.com/listentothefrog/astrowrld"
-            >
-              Astrowrld
-            </a>
-          </p>
-        </div>
-        <button
-          onClick={() => googleAuthProvider()}
-          className="sign-with-google"
-        >
-          Sign in with Google
-        </button>
-      </header>
-    </div>
+    <>
+      <div className="welcome-div">
+        <h1 className="welcome-heading">Welcome to Lobby!</h1>
+        <p className="welcome-subtitle">
+          The Foundation for{" "}
+          <a
+            className="astrowrld-link"
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/listentothefrog/astrowrld"
+          >
+            Astrowrld
+          </a>
+        </p>
+      </div>
+      <button onClick={() => googleAuthProvider()} className="sign-with-google">
+        Sign in with Google
+      </button>
+    </>
   );
 };
 
