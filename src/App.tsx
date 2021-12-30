@@ -7,7 +7,11 @@ import Chat from "./components/Chat/Chat";
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <Suspense fallback="Loading...">{user ? <Chat /> : <Login />}</Suspense>
+    <div className="App">
+      <header className="App-header">
+        <Suspense fallback="Loading...">{user ? <Chat /> : <Login />}</Suspense>
+      </header>
+    </div>
   );
 }
 
