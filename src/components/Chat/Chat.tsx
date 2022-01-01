@@ -1,14 +1,10 @@
-import {
-  addDoc,
-  collection,
-  query,
-  serverTimestamp,
-} from "@firebase/firestore";
-import { onSnapshot, orderBy } from "firebase/firestore";
+import { addDoc, collection, query } from "@firebase/firestore";
+import { onSnapshot, orderBy, Timestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { auth, db } from "src/firebase/init";
 import "./Chat.css";
+import Message from "./Message/Message";
 
 const Chat = () => {
   const [text, setText] = useState("");
@@ -28,8 +24,10 @@ const Chat = () => {
   const sendMessage = async (e: any) => {
     e.preventDefault();
     await addDoc(messagesRef, {
+      id: Math.floor(Math.random() * 1000000000),
       text: text,
-      createdAt: serverTimestamp(),
+      createdBy: auth.currentUser?.displayName,
+      createdAt: Timestamp.fromDate(new Date()),
       uid: auth.currentUser?.uid,
       photoURL: auth.currentUser?.photoURL,
     });
@@ -39,7 +37,12 @@ const Chat = () => {
     <>
       <main>
         {messages.map((msg: any) => (
-          <div key={msg.id}>{msg.text}</div>
+          <Message
+            key={msg.id}
+            text={msg.text}
+            photoURL={msg.photoURL}
+            createdBy={msg.createdBy}
+          />
         ))}
       </main>
       <form onSubmit={sendMessage}>
