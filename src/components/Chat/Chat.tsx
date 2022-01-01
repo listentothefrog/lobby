@@ -15,7 +15,6 @@ const Chat = () => {
       photoURL: auth.currentUser?.photoURL,
     });
     setText("");
-    console.log("message sent!");
   };
   return (
     <>
