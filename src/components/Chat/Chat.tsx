@@ -1,12 +1,34 @@
-import React from "react";
+import { addDoc, collection, serverTimestamp } from "@firebase/firestore";
+import React, { useState } from "react";
+import { auth, db } from "src/firebase/init";
 import "./Chat.css";
 
 const Chat = () => {
+  const [text, setText] = useState("");
+  const messagesRef = collection(db, "messages");
+  const sendMessage = async (e: any) => {
+    e.preventDefault();
+    await addDoc(messagesRef, {
+      text: text,
+      createdAt: serverTimestamp(),
+      uid: auth.currentUser?.uid,
+      photoURL: auth.currentUser?.photoURL,
+    });
+    setText("");
+    console.log("message sent!");
+  };
   return (
     <>
       <main></main>
-      <form>
-        <input placeholder="Message in Lobby" />
+      <form onSubmit={sendMessage}>
+        <input
+          onChange={(e) => setText(e.target.value)}
+          value={text}
+          placeholder="Message in Lobby"
+        />
+        <button type="submit" disabled={!text}>
+          👉
+        </button>
       </form>
     </>
   );
