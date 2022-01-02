@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { auth, db } from "src/firebase/init";
 import "./Chat.css";
 import Message from "./Message/Message";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Account from "../Account/Account";
 
 const Chat = () => {
   const [text, setText] = useState("");
@@ -35,12 +37,19 @@ const Chat = () => {
   };
   return (
     <>
-      <nav>
-        <div className="logo">
-          <h1>✋ Lobby</h1>
-        </div>
-        <div className="account">your account</div>
-      </nav>
+      <Router>
+        <nav>
+          <div className="logo">
+            <h1>✋ Lobby</h1>
+          </div>
+          <Link to="/account">
+            <div className="account">your account</div>
+          </Link>
+        </nav>
+        <Routes>
+          <Route path="/account" element={<Account />}></Route>
+        </Routes>
+      </Router>
       <main>
         {messages.map((msg: any) => (
           <Message
