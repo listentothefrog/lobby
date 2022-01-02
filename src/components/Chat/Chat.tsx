@@ -37,7 +37,7 @@ const Chat = () => {
     <>
       <nav>
         <div className="logo">
-          <h1>💬 Lobby</h1>
+          <h1>✋ Lobby</h1>
         </div>
         <div className="account">your account</div>
       </nav>
