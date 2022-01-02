@@ -35,6 +35,12 @@ const Chat = () => {
   };
   return (
     <>
+      <nav>
+        <div className="logo">
+          <h1>💬 Lobby</h1>
+        </div>
+        <div className="account">your account</div>
+      </nav>
       <main>
         {messages.map((msg: any) => (
           <Message
