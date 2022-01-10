@@ -61,6 +61,7 @@ const Chat = () => {
               text={msg.text}
               photoURL={msg.photoURL}
               createdBy={msg.createdBy}
+              createdAt={msg.createdAt.toDate()}
             />
           </Suspense>
         ))}
