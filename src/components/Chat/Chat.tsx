@@ -7,15 +7,13 @@ import "./Chat.css";
 import Message from "./Message/Message";
 import { useNavigate } from "react-router-dom";
 
-import { useAuthState } from "react-firebase-hooks/auth";
-
 const Chat = () => {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
-  const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  let authToken = sessionStorage.getItem("Auth Token");
   useEffect(() => {
-    if (!user) {
+    if (!authToken) {
       navigate("/");
     }
   }, []);
