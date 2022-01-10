@@ -58,3 +58,10 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
+.back {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+}
