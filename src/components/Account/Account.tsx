@@ -39,6 +39,14 @@ const Account = () => {
           <div className="margin">
             <button onClick={signOut}>Sign out</button>
           </div>
+          <div className="margin contributions">
+            <a href="https://github.com/listentothefrog/lobby">
+              <div>Github</div>
+            </a>
+            <a href="https://twitter.com/la39zz">
+              <div>Twitter</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
