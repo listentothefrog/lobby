@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { auth, db } from "src/firebase/init";
 import "./Chat.css";
 import Message from "./Message/Message";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Chat = () => {
   const [text, setText] = useState("");
@@ -48,7 +48,9 @@ const Chat = () => {
           <h1>✋ Lobby</h1>
         </div>
 
-        <div className="account">your account</div>
+        <Link to="/account">
+          <div className="account">your account</div>
+        </Link>
       </nav>
 
       <main>
