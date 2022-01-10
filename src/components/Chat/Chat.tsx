@@ -1,11 +1,11 @@
 import { addDoc, collection, query } from "@firebase/firestore";
 import { onSnapshot, orderBy, Timestamp } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { useEffect } from "react";
 import { auth, db } from "src/firebase/init";
 import "./Chat.css";
-import Message from "./Message/Message";
 import { Link, useNavigate } from "react-router-dom";
+const Message = React.lazy(() => import("./Message/Message"));
 
 const Chat = () => {
   const [text, setText] = useState("");
@@ -55,12 +55,14 @@ const Chat = () => {
 
       <main>
         {messages.map((msg: any) => (
-          <Message
-            key={msg.id}
-            text={msg.text}
-            photoURL={msg.photoURL}
-            createdBy={msg.createdBy}
-          />
+          <Suspense fallback={<p>Loading messages...</p>}>
+            <Message
+              key={msg.id}
+              text={msg.text}
+              photoURL={msg.photoURL}
+              createdBy={msg.createdBy}
+            />
+          </Suspense>
         ))}
       </main>
       <form onSubmit={sendMessage}>
