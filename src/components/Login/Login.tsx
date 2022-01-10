@@ -9,8 +9,7 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
+        sessionStorage.setItem("Auth Token", result.user.refreshToken);
         navigate("/lobby");
       })
       .catch((error) => {
