@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import Login from "./components/Login/Login";
-import { auth } from "./firebase/init";
-import { useAuthState } from "react-firebase-hooks/auth";
 import Chat from "./components/Chat/Chat";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
-  const [user] = useAuthState(auth);
+  let authToken = sessionStorage.getItem("Auth Token");
   useEffect(() => {
-    if (user) {
+    if (authToken) {
       navigate("/lobby");
     }
-    if (!user) {
+    if (!authToken) {
       navigate("/");
     }
   }, []);
