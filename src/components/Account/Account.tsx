@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "src/firebase/init";
 import "./Account.css";
 
@@ -17,6 +17,9 @@ const Account = () => {
   };
   return (
     <div>
+      <Link to="/lobby">
+        <div className="back">Back to Lobby</div>
+      </Link>
       <div className="account">
         <div className="account-section">
           <div className="account-div">
