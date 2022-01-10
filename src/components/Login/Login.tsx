@@ -1,14 +1,17 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "src/firebase/init";
 import "./Login.css";
 const Login = () => {
+  const navigate = useNavigate();
   const googleAuthProvider = async () => {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/lobby");
       })
       .catch((error) => {
         const errorCode = error.code;
