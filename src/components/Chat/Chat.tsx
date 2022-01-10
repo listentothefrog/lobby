@@ -55,7 +55,7 @@ const Chat = () => {
 
       <main>
         {messages.map((msg: any) => (
-          <Suspense fallback={<p>Loading messages...</p>}>
+          <Suspense key={msg.id} fallback={<p>Loading messages...</p>}>
             <Message
               key={msg.id}
               text={msg.text}
