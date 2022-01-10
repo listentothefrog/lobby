@@ -5,12 +5,20 @@ import { useEffect } from "react";
 import { auth, db } from "src/firebase/init";
 import "./Chat.css";
 import Message from "./Message/Message";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Account from "../Account/Account";
+import { useNavigate } from "react-router-dom";
+
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Chat = () => {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, []);
   const messagesRef = collection(db, "messages");
   const q = query(messagesRef, orderBy("createdAt"));
   useEffect(() => {
@@ -37,19 +45,14 @@ const Chat = () => {
   };
   return (
     <>
-      <Router>
-        <nav>
-          <div className="logo">
-            <h1>✋ Lobby</h1>
-          </div>
-          <Link to="/account">
-            <div className="account">your account</div>
-          </Link>
-        </nav>
-        <Routes>
-          <Route path="/account" element={<Account />}></Route>
-        </Routes>
-      </Router>
+      <nav>
+        <div className="logo">
+          <h1>✋ Lobby</h1>
+        </div>
+
+        <div className="account">your account</div>
+      </nav>
+
       <main>
         {messages.map((msg: any) => (
           <Message
