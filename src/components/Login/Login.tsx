@@ -20,25 +20,23 @@ const Login = () => {
       });
   };
   return (
-    <>
-      <div className="welcome-div">
-        <h1 className="welcome-heading">Welcome to Lobby!</h1>
-        <p className="welcome-subtitle">
-          The Foundation for{" "}
-          <a
-            className="astrowrld-link"
-            target="_blank"
-            rel="noopener"
-            href="https://github.com/listentothefrog/astrowrld"
-          >
-            Astrowrld
-          </a>
+    <div className="landing-div">
+      <div className="chat-svg"></div>
+      <div className="landing-section-text">
+        <h1 className="landing-text-heading">Welcome to Lobby!</h1>
+        <p className="landing-text-subtitle">
+          Lobby a place where you can.... belong to a a gaming group, an anime
+          club, even a community of pepe's. I don't know if you know this but
+          Lobby is the foundation for Astrowrld, where you can find subwrlds of
+          your interests!
         </p>
       </div>
-      <button onClick={() => googleAuthProvider()} className="sign-with-google">
-        Sign in with Google
-      </button>
-    </>
+      <div className="button">
+        <button className="sign-in-button" onClick={googleAuthProvider}>
+          Open in the browser
+        </button>
+      </div>
+    </div>
   );
 };
 
