@@ -12,6 +12,7 @@ Lobby is a global chat app and is the foundation for another chat app [Astrowrld
 - [message-ui](https://github.com/listentothefrog/lobby/tree/message-ui)
 - [managing-user-account](https://github.com/listentothefrog/lobby/tree/managing-user-account)
 - [better-routing](https://github.com/listentothefrog/lobby/tree/better-routing)
+- [better-ui](https://github.com/listentothefrog/lobby/tree/better-ui)
 
 ## Built using
 
