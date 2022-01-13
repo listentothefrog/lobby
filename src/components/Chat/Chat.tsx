@@ -42,7 +42,7 @@ const Chat = () => {
     setText("");
   };
   return (
-    <>
+    <div className="chat">
       <nav>
         <div className="logo">
           <h1>✋ Lobby</h1>
@@ -76,7 +76,7 @@ const Chat = () => {
           👉
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
