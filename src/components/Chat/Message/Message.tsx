@@ -13,16 +13,18 @@ const Message = (props: ChatMessageProps) => {
   const { text, photoURL, createdBy, createdAt } = props;
   return (
     <div className="message">
-      <img src={photoURL} alt="user profile" />
+      <img className="avatar" src={photoURL} alt="user profile" />
       <div className="group">
         <div>
+          <div className="header">
+            <h2>{createdBy}</h2>{" "}
+            <span>
+              <Moment format="DD/MM/YYYY" fromNow>
+                {createdAt}
+              </Moment>
+            </span>
+          </div>
           <p className="text">{text}</p>
-        </div>
-        <div className="username">
-          From {createdBy} at {""}
-          <Moment format="DD/MM/YYYY" fromNow>
-            {createdAt}
-          </Moment>
         </div>
       </div>
     </div>
