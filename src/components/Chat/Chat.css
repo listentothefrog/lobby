@@ -1,9 +1,18 @@
-nav {
+.chat {
   width: 100%;
+  height: 100vh;
+  background-color: #202225;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+nav {
+  width: 99%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: auto;
 }
 nav .logo {
   padding-left: 5px;
@@ -18,10 +27,12 @@ nav .account:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
 main {
+  width: 95%;
   padding: 10px;
   height: 80vh;
-  margin: 10vh 0 10vh;
+  margin: auto;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -33,8 +44,9 @@ form {
   bottom: 0;
   background-color: rgb(24, 23, 23);
   width: 100%;
-  max-width: 728px;
+  max-width: 99%;
   display: flex;
+  margin: auto;
 }
 
 input {
@@ -51,7 +63,7 @@ input {
 button {
   background-color: #f0f8ff;
   border: none;
-  padding: 15px 32px;
+  padding: 15px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
