@@ -1,67 +1,85 @@
-.flex {
-  display: flex;
-}
-
-a {
-  color: white;
-}
-.account {
+.account-wrapper {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.account .account-section {
-  flex: 1;
-}
-
-.account .account-div {
-  display: flex;
-  align-items: center;
-}
-
-.user-info {
+  height: 100vh;
+  background-color: #202225;
+  color: #fff;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.user-info h1 {
-  margin-left: 2px;
-  font-size: 34px;
-}
-
-.margin {
+.return {
+  position: absolute;
   margin-top: 10px;
+  margin-left: 5px;
+  top: 0%;
+  left: 0%;
+  color: #fff;
+  text-decoration: inherit;
+  font-family: "Russo One", sans-serif;
 }
 
-.account button {
-  color: #282c34;
-  background-color: #85ffbd;
-  padding: 20px 25px;
-  border: none;
-  font-size: 15px;
-  margin: 0 auto;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 10px;
-}
-
-.creation-time {
-  color: #b0b0b0;
-}
-
-.contributions {
+.account-section {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.account-section .current-user-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.back {
-  width: 100%;
+.current-user-metadata {
+  width: 19%;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: center;
+}
+
+.current-user-metadata h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.user-logout {
+  width: 19%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-logout button {
+  width: 100%;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+  font-family: "Montserrat", sans-serif;
+  justify-content: space-evenly;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer h3 {
+  font-weight: 400px;
+  font-size: 16px;
 }
