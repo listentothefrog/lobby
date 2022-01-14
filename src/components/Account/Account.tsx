@@ -16,41 +16,38 @@ const Account = () => {
     navigate("/");
   };
   return (
-    <div>
+    <div className="account-wrapper">
       <Link to="/lobby">
-        <div className="back">Back to Lobby</div>
+        <div className="return">👈 Back to Lobby</div>
       </Link>
-      <div className="account">
-        <div className="account-section">
-          <div className="account-div">
-            <img
-              src={auth.currentUser?.photoURL! as string}
-              alt="user profile picture"
-            />
-            <div className="user-info">
-              <h1>{auth.currentUser?.displayName}</h1>
-            </div>
-          </div>
-          <div className="margin">
-            <p className="creation-time flex">
-              Account Created At: {auth.currentUser?.metadata.creationTime}
-            </p>
-            <p className="creation-time flex">
-              Last Sign In: {auth.currentUser?.metadata.lastSignInTime}
-            </p>
-          </div>
-          <div className="margin">
-            <button onClick={signOut}>Sign out</button>
-          </div>
-          <div className="margin contributions">
-            <a href="https://github.com/listentothefrog/lobby">
-              <div>Github</div>
-            </a>
-            <a href="https://twitter.com/la39zz">
-              <div>Twitter</div>
-            </a>
-          </div>
+      <div className="account-section">
+        <div className="current-user-info">
+          <img
+            className="avatar"
+            alt="avatar"
+            src={auth.currentUser?.photoURL! as string}
+          />
+          <h1 className="current-username">{auth.currentUser?.displayName}</h1>
         </div>
+        <div className="current-user-metadata">
+          <h1>Account Created At: {auth.currentUser?.metadata.creationTime}</h1>
+          <h1>Last Sign in: {auth.currentUser?.metadata.lastSignInTime}</h1>
+          <h1>Email: {auth.currentUser?.email}</h1>
+        </div>
+        <div className="user-logout">
+          <button onClick={signOut}>Sign Out</button>
+        </div>
+      </div>
+      <div className="footer">
+        <a href="https://github.com/listentothefrog/lobby/issues">
+          <h3>Report a Bug</h3>
+        </a>
+        <a href="https://github.com/listentothefrog/lobby/issues">
+          <h3>Astrowrld</h3>
+        </a>
+        <a href="https://twitter.com/la39zz">
+          <h3>Twitter</h3>
+        </a>
       </div>
     </div>
   );
